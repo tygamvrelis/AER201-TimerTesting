@@ -40,15 +40,13 @@ void interrupt handler(void) {
         __lcd_newline();
         printf("Test %d: Timer1", count);
 
-        /*
-        if(count<9){
+        if(count<500){
             // Initialize timer again!
-           T1CON = 0b10110100;
-           TMR1H = 0b10110001;
-           TMR1L = 0b11100000;
-           T1CON = T1CON | 0b00000001;
+            T1CON = 0b10110000;
+            TMR1H = 0b10110001;
+            TMR1L = 0b11100000;
+            TMR1ON = 1;
         }
-        */
     }
     
     //** 1 SECOND TIMER THAT CALLS printRTC() using Timer2 **
@@ -60,9 +58,9 @@ void interrupt handler(void) {
         // Print out test #
         printRTC();
         __lcd_newline();
-        printf("Test %d: Timer1", count);
+        printf("Test %d: Timer2", count);
 
-        if(count<9){
+        if(count<1200){
             // Initialize timer again!
             T2CON = 0b01111011; // 1:16 postscale (not taken into account for comp. with PR2), 16x prescaler
             PR2 = 0xFF;
@@ -80,7 +78,7 @@ void interrupt handler(void) {
         __lcd_newline();
         printf("Test %d: Timer3", count);
         
-        if(count==8){
+        if(count<500){
             // Initialize timer again!
             T3CON = 0b10110100;
             TMR3H = 0b10110001;

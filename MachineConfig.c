@@ -48,7 +48,10 @@ void machineConfig(void) {
     //**INTERRUPTS**//    
     TMR0IE = 1; // Enable Timer0 interrupts
     TMR1IE = 1; // Enable Timer1 interrupts
-    TMR2IE = 1;
-    TMR3IE = 1;
+    TMR2IE = 1; // Enable Timer2 interrupts
+    TMR3IE = 1; // Enable Timer3 interrupts
+    
+    PEIE = 1; // Set peripheral interrupt enable bit (YOU MUST DO THIS IF YOU
+              // DIDN'T SET INTERRUPT PRIORITIES (i.e. if IPEN=0)
     ei(); // Enable all interrupts for now
 }
