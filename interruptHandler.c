@@ -30,7 +30,7 @@ void interrupt handler(void) {
         }
     }
     
-    //** 1 SECOND TIMER THAT CALLS printRTC() using Timer1 **
+    //** 20 ms TIMER THAT CALLS printRTC() using Timer1 **
     if(TMR1IF){
         TMR1IF = 0;
         count++;
@@ -49,7 +49,7 @@ void interrupt handler(void) {
         }
     }
     
-    //** 1 SECOND TIMER THAT CALLS printRTC() using Timer2 **
+    //** TIMER THAT CALLS printRTC() using Timer2 **
     if(TMR2IF){
         TMR2IF = 0;
         count++;
@@ -68,7 +68,7 @@ void interrupt handler(void) {
         }
     }
     
-    //** 1 SECOND TIMER THAT CALLS printRTC() using Timer3 **
+    //** 20 ms TIMER THAT CALLS printRTC() using Timer3 **
     if(TMR3IF){
         TMR3IF = 0;
         count++;
